@@ -1,0 +1,57 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  # Имя развертывания для удобства идентификации
+spec:
+  replicas: 3
+  # Количество реплик для обеспечения отказоустойчивости и масштабируемости
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+    spec:
+      affinity:
+        podAntiAffinity: # Обеспечивает антиаффинити, распределяя поды по разным нодам.
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - topologyKey: kubernetes.io/hostname
+          labelSelector:
+            matchLables:
+              app: my-app
+      containers:
+      - name: my-app
+        image: my-image
+        ports:
+        - containerPort: 8080
+        resources:
+          requests:
+            cpu: 100m
+            memory: 128Mi
+            # Минимальные ресурсы, гарантированные каждому поду.
+            # Основаны на профилировании нагрузки и позволяют избежать "голодных" подов.
+          limits:
+            cpu: 200m
+            memory: 150Mi
+            # Максимальные ресурсы, которые может потребовать под.
+            # Предотвращает чрезмерное потребление ресурсов и позволяет избежать "убийства" подов.
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          initialDelaySeconds: 10
+          periodSeconds: 10
+          # Проверяет, жив ли под.
+          # initialDelaySeconds: Задержка перед началом проверки.
+          # periodSeconds: Периодичность проверок.
+          # Далее выполняется readinessProbe.
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8080
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          # Проверяет, готов ли под к приему трафика.
+          # Трафик направляется на под только после того, как он будет готов.
