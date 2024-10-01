@@ -1,0 +1,11 @@
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/bin/Debug/net8.0/MindBoxLib.deps.json
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/bin/Debug/net8.0/MindBoxLib.dll
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/bin/Debug/net8.0/MindBoxLib.pdb
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.GeneratedMSBuildEditorConfig.editorconfig
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.AssemblyInfoInputs.cache
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.AssemblyInfo.cs
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.csproj.CoreCompileInputs.cache
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.dll
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/refint/MindBoxLib.dll
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/MindBoxLib.pdb
+/home/dvlcx/Projects/MindBoxTasks/MindBoxLib/obj/Debug/net8.0/ref/MindBoxLib.dll
